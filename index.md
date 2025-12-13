@@ -36,5 +36,5 @@ My current research focuses on feed-forward 4D reconstruction, compression and t
 ## Dataset and Demo
 
 ## Selected Services
-Review for **IEEE Communication Magazine**.
+Reviewer for **IEEE Communication Magazine**.
 
