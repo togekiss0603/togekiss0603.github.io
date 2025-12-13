@@ -4,11 +4,13 @@ layout: homepage
 
 ## About Me
 
-I am a Ph.D. student at ...
+I am a second-year M.S. student in the Department of Electronic Engineering at Tsinghua University.
 
 ## Research Interests
 
-- **Computer Vision:** image recognition, image generation, video captioning
+- **3D Computer Vision:** 3D Reconstruction, 3D Representation Learning, Spatial-temporal Intelligence
+- **Immersive Communication:** Semantic Communications, AI-enabled Communications, Compressive Sensing, Signal Processing
+- **Video Coding:** Point Cloud Compression for 4D videos, Transmission
 - **Machine Learning:** meta-learning, incremental learning, transfer learning
 
 ## News
