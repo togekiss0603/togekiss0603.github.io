@@ -31,7 +31,7 @@ My current research focuses on feed-forward 4D reconstruction, compression and t
 ## Selected Awards
 - Tsinghua University **Comprehensive First-Class Scholarship**, 2025
 - **National Scholarship**, 2022
-- 20th China Graduate Electronic Design Competition, Second Prize, North China Region
+- 20th China Graduate Electronic Design Competition, Second Prize, North China Region, 2025
 
 ## Dataset and Demo
 

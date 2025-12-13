@@ -16,6 +16,7 @@ main:
     conference_short: Arxiv
     conference: Arxiv
     pdf: https://arxiv.org/pdf/2510.13408
+    page: https://arxiv.org/abs/2510.13408
     
     #code: https://github.com/yaoyao-liu/class-incremental-learning/tree/main/mnemonics-training
     #page: https://class-il.mpi-inf.mpg.de/mnemonics/
