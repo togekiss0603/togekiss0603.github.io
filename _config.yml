@@ -1,5 +1,5 @@
 # Basic Information 
-title: Zhiyuan Qi
+title: Zhiyuan Qi / 齐致远
 position: M.S. Student
 affiliation: Tsinghua University
 address: Department of Electronic Engineering, singhua University, Beijing, China
@@ -21,9 +21,9 @@ github_link: https://github.com/togekiss0603
 
 # Images (e.g., your profile picture and your website's favicon) 
 # "favicon" and "favicon_dark" are used for the light and dark modes, respectively. 
-avatar: ./assets/img/avatar.png
-favicon: ./assets/img/favicon.png
-favicon_dark: ./assets/img/favicon-dark.png
+avatar: ./assets/img/head.jpg
+favicon: ./assets/img/head.jpg
+favicon_dark: ./assets/img/head.jpg
 
 # Footnote
 # You may use the option to disable the footnote, "Powered by Jekyll and Minimal Light theme."

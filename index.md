@@ -4,14 +4,17 @@ layout: homepage
 
 ## About Me
 
-I am a second-year M.S. student in the Department of Electronic Engineering at Tsinghua University.
+I am a second-year M.S. student in the [Department of Electronic Engineering at Tsinghua University](https://www.ee.tsinghua.edu.cn/), where I am fortunate to be advised by [Prof. Zhijin Qin](https://web.ee.tsinghua.edu.cn/qinzhijin/zh_CN/index.htm), and I am majoring in Artificial Intelligence and Communication Engineering. Prior to his, I have completed my bachelor’s degree in the School of Electronic and Information Engineering, Beijing Jiaotong University in 2024.
+
+My current research focuses on feed-forward 4D reconstruction, Compression and Transmission for 4D point clouds. **My primary research objectives are to decouple the geometry and semantics to extract essential 4D representations, and to explore intelligence for joint spatial-temporal continuous perception keeping me passionate.** I would be sincerely delighted to exchange ideas and seek collaboration opportunities with researchers and peers!
 
 ## Research Interests
 
-- **3D Computer Vision:** 4D Reconstruction, Spatial Intelligence, 3D Representation Learning, Continuous-sensing Learning
+- **3D Computer Vision:** 4D Reconstruction, Spatial Intelligence, 3D Representation Learning
 - **Immersive Communication:** Holographic Communications, Semantic Communications, AI-enabled Communications
-- **Video Coding:** Point Cloud Compression and Transmission for 4D videos
+- **Video Coding:** Compression and Transmission for 4D Point Cloud videos
 
+## News
 <!-- ## News
 
 - **[Feb. 2020]** Our paper about incremental learning is accepted to CVPR 2020.
@@ -26,10 +29,12 @@ I am a second-year M.S. student in the Department of Electronic Engineering at T
 - A Joint Optimization Method, Device, and Medium for Sampling-Semantic in Three-Dimensional Point Clouds for Holographic Communications, **Authorized**
 
 ## Selected Awards
-- Tsinghua University Comprehensive First-Class Scholarship, 2025
+- Tsinghua University **Comprehensive First-Class Scholarship**, 2025
+- **National Scholarship**, 2022
 - 20th China Graduate Electronic Design Competition, Second Prize, North China Region
-- National Scholarship, 2022
+
+## Dataset and Demo
 
 ## Selected Services
-Review for IEEE Communication Magazine.
+Review for **IEEE Communication Magazine**.
 
