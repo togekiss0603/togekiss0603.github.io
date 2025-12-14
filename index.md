@@ -6,7 +6,7 @@ layout: homepage
 
 I am a second-year M.S. student in the [Department of Electronic Engineering at Tsinghua University](https://www.ee.tsinghua.edu.cn/), where I am fortunate to be advised by [Prof. Zhijin Qin](https://web.ee.tsinghua.edu.cn/qinzhijin/zh_CN/index.htm), and I am majoring in Artificial Intelligence and Communication Engineering. Prior to this, I have completed my bachelor’s degree in the [School of Electronic and Information Engineering at Beijing Jiaotong University](https://eie.bjtu.edu.cn/) in 2024.
 
-My current research focuses on feed-forward 4D reconstruction, compression and transmission for point clouds, and I also tend to Embodied Intelligence. **My primary research objectives are to decouple the geometry and semantics for 4D representations, and to explore intelligence for joint spatial-temporal continuous perception keeping me passionate.** I would be sincerely delighted to exchange ideas and seek collaboration opportunities with researchers and peers!
+My current research focuses on feed-forward 4D reconstruction, compression and transmission for point clouds, and I also tend to explore Embodied Intelligence. **My primary research objectives are to decouple the geometry and semantics for 4D representations, and to explore intelligence for joint spatial-temporal continuous perception keeping me passionate.** I would be sincerely delighted to exchange ideas and seek collaboration opportunities with researchers and peers!
 
 ## Research Interests
 
