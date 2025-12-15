@@ -8,6 +8,8 @@ I am a second-year M.S. student in the [Department of Electronic Engineering at 
 
 My current research focuses on feed-forward 4D reconstruction, compression and transmission for point clouds, and I also tend to explore Embodied Intelligence. **My primary research objectives are to decouple the geometry and semantics for 4D representations, and to explore intelligence for joint spatial-temporal continuous perception keeping me passionate.** I would be sincerely delighted to exchange ideas and seek collaboration opportunities with researchers and peers!
 
+**I'm currently seeking a PhD position for fall 2027!**
+
 ## Research Interests
 
 - **3D Computer Vision:** 4D Reconstruction, Spatial Intelligence, 3D Representation Learning
