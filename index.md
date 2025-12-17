@@ -27,8 +27,8 @@ My current research focuses on feed-forward 4D reconstruction, compression and t
 {% include_relative _includes/publications.md %}
 
 ## Patents
-- A Channel Environment Adaptive Joint Optimization Method and System for Sampling-Semantic-Channel Coding, **Authorized**
-- A Joint Optimization Method, Device, and Medium for Sampling-Semantic in Three-Dimensional Point Clouds for Holographic Communications, **Authorized**
+- "A Channel Environment Adaptive Joint Optimization Method and System for Sampling-Semantic-Channel Coding", ZL 2024 1 1509807.8, **Granted**
+- "A Joint Optimization Method, Device, and Medium for Sampling-Semantic in Point Clouds for Holographic Communications", ZL 2025 1 1141478.0, **Granted**
 
 ## Selected Awards
 - Tsinghua University **Comprehensive First-Class Scholarship**, 2025
