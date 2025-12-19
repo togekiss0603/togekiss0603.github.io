@@ -95,11 +95,12 @@
       <section>
 
       {{ content }}
-        <script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=ffffff&w=a&t=tt&d=mimMKRAAli-zSS2UDdRbmlLd_oFy2cp_BCUeqsLi8sg'></script>
 
       <br>
 
       {% if site.enable_footnote %}
+      <script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=ffffff&w=a&t=tt&d=mimMKRAAli-zSS2UDdRbmlLd_oFy2cp_BCUeqsLi8sg'></script>
+
       <p><small>Powered by Jekyll and <a href="https://github.com/yaoyao-liu/minimal-light" target="_blank" rel="noopener">Minimal Light</a> theme.</small></p>
       {% endif %}
 
@@ -108,6 +109,7 @@
         
       </footer>
     </div>
+    
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     {% if site.google_analytics %}
     <script>
