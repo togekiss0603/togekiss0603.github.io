@@ -37,6 +37,11 @@ My current research focuses on feed-forward 4D reconstruction, compression and t
 
 ## Dataset and Demo
 
+## Technical Skills
+- Languages: Python, Matlab, C/C++
+- Frameworks: Pytorch, open3d, MinkowskiEngine
+- Tools: Unity, Git, Conda, Cmake
+
 ## Selected Services
 Reviewer for **IEEE Communication Magazine**.
 
