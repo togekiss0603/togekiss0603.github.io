@@ -4,7 +4,8 @@ layout: homepage
 
 ## About Me
 
-I am a second-year M.S. student in the [Department of Electronic Engineering at Tsinghua University](https://www.ee.tsinghua.edu.cn/), and I am majoring in Artificial Intelligence and Communication Engineering. Prior to this, I have completed my bachelor’s degree in the [School of Electronic and Information Engineering at Beijing Jiaotong University](https://eie.bjtu.edu.cn/) in 2024.
+I am a second-year M.S. student in the [Department of Electronic Engineering at Tsinghua University](https://www.ee.tsinghua.edu.cn/), and I am majoring in Artificial Intelligence and Communication Engineering. 
+<!-- Prior to this, I have completed my bachelor’s degree in the [School of Electronic and Information Engineering at Beijing Jiaotong University](https://eie.bjtu.edu.cn/) in 2024. -->
 
 My current research and on-going work focuses on **feed-forward 4D reconstruction**, **compression and transmission for point clouds**, and I am also interested in **Embodied Intelligence** and **World Model**. **My primary research objectives are to decouple the geometry and semantics for 4D representations, and to explore intelligence for joint spatial-temporal continuous perception keeping me passionate.** I would be sincerely delighted to exchange ideas and seek collaboration opportunities with researchers and peers!
 
@@ -32,8 +33,10 @@ My current research and on-going work focuses on **feed-forward 4D reconstructio
 
 ## Selected Awards
 - Tsinghua University **Comprehensive First-Class Scholarship**, 2025
-- **National Scholarship**, 2022
-- 20th China Graduate Electronic Design Competition, Second Prize, North China Region, 2025
+- Outstanding Undergraduate Thesis Award, 2024\\
+- National Scholarship (Awarded to the **top 0.2%** of students nationwide), 2022
+- 20th China Graduate Electronic Design Competition, *Second*z Prize, 2025
+- MCM (Mathematical Contest In Modeling)/ ICM (Interdisciplinary Contest In Modeling), **Finalist** Prize, 2021
 
 ## Dataset and Demo
 
