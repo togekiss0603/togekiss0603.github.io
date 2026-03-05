@@ -17,7 +17,7 @@ My current research and on-going work focuses on **feed-forward 4D reconstructio
 - **Immersive Communication:** Holographic Communications, Semantic Communications, AI-enabled Communications
 - **Video Coding:** Compression and Transmission for 4D Point Cloud videos
 
-## News
+<!-- ## News -->
 <!-- ## News
 
 - **[Feb. 2020]** Our paper about incremental learning is accepted to CVPR 2020.
@@ -38,7 +38,7 @@ My current research and on-going work focuses on **feed-forward 4D reconstructio
 - 20th China Graduate Electronic Design Competition, *Second*z Prize, 2025
 - MCM (Mathematical Contest In Modeling)/ ICM (Interdisciplinary Contest In Modeling), **Finalist** Prize, 2021
 
-## Dataset and Demo
+<!-- ## Dataset and Demo -->
 
 ## Technical Skills
 - Languages: Python, Matlab, C/C++
