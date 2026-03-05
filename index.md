@@ -33,7 +33,7 @@ My current research and on-going work focuses on **feed-forward 4D reconstructio
 
 ## Selected Awards
 - Tsinghua University **Comprehensive First-Class Scholarship**, 2025
-- Outstanding Undergraduate Thesis Award, 2024\\
+- Outstanding Undergraduate Thesis Award, 2024
 - National Scholarship (Awarded to the **top 0.2%** of students nationwide), 2022
 - 20th China Graduate Electronic Design Competition, *Second*z Prize, 2025
 - MCM (Mathematical Contest In Modeling)/ ICM (Interdisciplinary Contest In Modeling), **Finalist** Prize, 2021
