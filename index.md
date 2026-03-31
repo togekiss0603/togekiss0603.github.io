@@ -46,5 +46,5 @@ My current research and on-going work focuses on **feed-forward 4D reconstructio
 - Tools: Unity, Git, Conda, Cmake
 
 ## Selected Services
-Reviewer for **IEEE ICME, IEEE Communication Magazine**.
+Reviewer for **CVPR, IEEE VTC Spring, IEEE ICME, IEEE COMMAG**.
 
