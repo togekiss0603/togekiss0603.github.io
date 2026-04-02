@@ -21,9 +21,9 @@ github_link: https://github.com/togekiss0603
 
 # Images (e.g., your profile picture and your website's favicon) 
 # "favicon" and "favicon_dark" are used for the light and dark modes, respectively. 
-avatar: ./assets/img/head.jpg
-favicon: ./assets/img/head.jpg
-favicon_dark: ./assets/img/head.jpg
+avatar: ./assets/img/head.png
+favicon: ./assets/img/head.png
+favicon_dark: ./assets/img/head.png
 
 # Footnote
 # You may use the option to disable the footnote, "Powered by Jekyll and Minimal Light theme."
