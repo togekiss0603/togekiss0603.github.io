@@ -32,11 +32,11 @@ My current research and on-going work focuses on **feed-forward 4D reconstructio
 - "A Joint Optimization Method, Device, and Medium for Sampling-Semantic in Point Clouds for Holographic Communications", [ZL 2025 1 1141478.0](/Users/qzy/Documents/GitHub/togekiss0603.github.io/html_source_file/assets/files/2025111414780.pdf), **Granted**
 
 ## Selected Awards
-- Tsinghua University **Comprehensive First-Class Scholarship**, 2025
+- Tsinghua University **Comprehensive 1<sup>st</sup> Scholarship**, 2025
 - Outstanding Undergraduate Thesis Award, 2024
-- National Scholarship (Awarded to the **top 0.2%** of students nationwide), 2022
-- 20th China Graduate Electronic Design Competition, *Second*z Prize, 2025
-- MCM (Mathematical Contest In Modeling)/ ICM (Interdisciplinary Contest In Modeling), **Finalist** Prize, 2021
+- National Scholarship (Awarded to the **top 0.2%** of students **nationwide**), 2022
+- 20th China Graduate Electronic Design Competition, **2 <sup>nd</sup>** Prize, 2025
+- MCM (Mathematical Contest In Modeling)/ ICM (Interdisciplinary Contest In Modeling), **Finalist Prize**(Ranked in the **top 1%** of students **worldwide**), 2021
 
 <!-- ## Dataset and Demo -->
 
