@@ -1,7 +1,8 @@
 # Basic Information 
-title: Zhiyuan Qi / 齐致远
+title: Zhiyuan Qi
 position: M.S. Student
 affiliation: Tsinghua University
+brief: THU
 address: Department of Electronic Engineering, singhua University, Beijing, China
 email: qzy24@mails.tsinghua.edu.cn
 
@@ -21,7 +22,7 @@ github_link: https://github.com/togekiss0603
 
 # Images (e.g., your profile picture and your website's favicon) 
 # "favicon" and "favicon_dark" are used for the light and dark modes, respectively. 
-avatar: ./assets/img/head.png
+avatar: ./assets/img/head-old.png
 favicon: ./assets/img/head.png
 favicon_dark: ./assets/img/head.png
 
