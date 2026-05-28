@@ -23,3 +23,16 @@ main:
     # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
     #notes: Oral Presentation
     image: ./assets/img/CM2025.png
+
+  - title: Anonymous Submission to <strong>EMNLP 2026</strong>
+    authors: Co-first Author, work  done while interning at UIUC.
+    conference_short: EMNLP 2026
+    conference: Empirical Methods in Natural Language Processing, 2026.
+    #pdf: https://arxiv.org/pdf/2510.13408
+    #page: https://arxiv.org/abs/2510.13408
+    
+    #code: https://github.com/yaoyao-liu/class-incremental-learning/tree/main/mnemonics-training
+    #page: https://class-il.mpi-inf.mpg.de/mnemonics/
+    # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
+    #notes: Oral Presentation
+    #image: ./assets/img/CM2025.png
