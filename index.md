@@ -4,18 +4,20 @@ layout: homepage
 
 ## About Me
 
-I am a second-year M.S. student in the [Department of Electronic Engineering at Tsinghua University](https://www.ee.tsinghua.edu.cn/), and I am majoring in Artificial Intelligence and Communication Engineering. 
+I am a second-year M.S. student in the [Department of Electronic Engineering at Tsinghua University](https://www.ee.tsinghua.edu.cn/), and I am majoring in Artificial Intelligence and Communication Engineering. I'm so fortunated to work as a research intern with Dr.Yifan Shen[https://shenyifans.github.io/] and Dr.Jiateng Liu[https://lumos-jiateng.github.io/] at UIUC, advised by Prof. Heng Ji[https://blender.cs.illinois.edu/hengji.html].
 <!-- Prior to this, I have completed my bachelor’s degree in the [School of Electronic and Information Engineering at Beijing Jiaotong University](https://eie.bjtu.edu.cn/) in 2024. -->
 
-My current research and on-going work focuses on **feed-forward 4D reconstruction**, **compression and transmission for point clouds**, and I am also interested in **Embodied Intelligence** and **World Model**. **My primary research objectives are to decouple the geometry and semantics for 4D representations, and to explore intelligence for joint spatial-temporal continuous perception keeping me passionate.** I would be sincerely delighted to exchange ideas and seek collaboration opportunities with researchers and peers!
+My current research and on-going work focuses on **VLMs/MLLMs, Agentic AI and 3DGS reconstruction for dynamic world**. I would be sincerely delighted to exchange ideas and seek collaboration opportunities with researchers and peers!
+
+<!-- **compression and transmission for point clouds**, and I am also interested in **Embodied Intelligence** and **World Model**. **My primary research objectives are to decouple the geometry and semantics for 4D representations, and to explore intelligence for joint spatial-temporal continuous perception keeping me passionate.** I would be sincerely delighted to exchange ideas and seek collaboration opportunities with researchers and peers! -->
 
 **I'm currently seeking PhD and research intern position for fall 2027!** Please **review my CV** for details!
 
 ## Research Interests
-
-- **3D Computer Vision:** 4D Reconstruction, Spatial Intelligence, 3D Representation Learning
-- **Immersive Communication:** Holographic Communications, Semantic Communications, AI-enabled Communications
-- **Video Coding:** Compression and Transmission for 4D Point Cloud videos
+- **LLM Agent/Agentic AI/VLMs/MLLMs:** Vision-driven LLM Agent, Multimodal Reasoning, Spatial Intelligence
+- **3D Computer Vision:** World Model, 3DGS, Learning for 4D Representation 
+- **Immersive Communication:** Holographic Video Communications, Semantic Communications, AI-enabled Communications
+- **Video Coding:** Compression and Transmission for videos
 
 <!-- ## News -->
 <!-- ## News
