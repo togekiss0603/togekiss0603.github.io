@@ -24,7 +24,7 @@ main:
     #notes: Oral Presentation
     image: ./assets/img/CM2025.png
 
-  - title: Submission to EMNLP 2026, <em>under review</em>
+  - title: Submission to EMNLP 2026(<em>under review</em>)
     authors: <strong>Co-first Author</strong>, work done while interning at UIUC.
     conference_short: EMNLP 2026
     conference: Empirical Methods in Natural Language Processing, 2026.
