@@ -16,8 +16,7 @@ My current research and on-going work focuses on **VLMs/MLLMs, Agentic AI and 3D
 ## Research Interests
 - **LLM Agent/Agentic AI/VLMs/MLLMs:** Vision-driven LLM Agent, Multimodal Reasoning, Spatial Intelligence
 - **3D Computer Vision:** World Model, 3DGS, Learning for 4D Representation 
-<!-- - **Immersive Communication:** Holographic Video Communications, Semantic Communications, AI-enabled Communications
-- **Video Coding:** Compression and Transmission for videos -->
+
 
 <!-- ## News -->
 <!-- ## News
