@@ -4,7 +4,7 @@ layout: homepage
 
 ## About Me
 
-I am a second-year M.S. student in the [Department of Electronic Engineering at Tsinghua University](https://www.ee.tsinghua.edu.cn/), and I am majoring in Artificial Intelligence and Communication Engineering. I'm so fortunated to work as a research intern with Dr.Yifan Shen[https://shenyifans.github.io/] and Dr.Jiateng Liu[https://lumos-jiateng.github.io/] at UIUC, advised by Prof. Heng Ji[https://blender.cs.illinois.edu/hengji.html].
+I am a second-year M.S. student in the [Department of Electronic Engineering at Tsinghua University](https://www.ee.tsinghua.edu.cn/), and I am majoring in Artificial Intelligence and Communication Engineering. I'm so fortunated to work as a research intern with [Dr.Yifan Shen](https://shenyifans.github.io/) and [Dr.Jiateng Liu](https://lumos-jiateng.github.io/) at **UIUC**, advised by [Prof. Heng Ji](https://blender.cs.illinois.edu/hengji.html).
 <!-- Prior to this, I have completed my bachelor’s degree in the [School of Electronic and Information Engineering at Beijing Jiaotong University](https://eie.bjtu.edu.cn/) in 2024. -->
 
 My current research and on-going work focuses on **VLMs/MLLMs, Agentic AI and 3DGS reconstruction for dynamic world**. I would be sincerely delighted to exchange ideas and seek collaboration opportunities with researchers and peers!
@@ -16,8 +16,8 @@ My current research and on-going work focuses on **VLMs/MLLMs, Agentic AI and 3D
 ## Research Interests
 - **LLM Agent/Agentic AI/VLMs/MLLMs:** Vision-driven LLM Agent, Multimodal Reasoning, Spatial Intelligence
 - **3D Computer Vision:** World Model, 3DGS, Learning for 4D Representation 
-- **Immersive Communication:** Holographic Video Communications, Semantic Communications, AI-enabled Communications
-- **Video Coding:** Compression and Transmission for videos
+<!-- - **Immersive Communication:** Holographic Video Communications, Semantic Communications, AI-enabled Communications
+- **Video Coding:** Compression and Transmission for videos -->
 
 <!-- ## News -->
 <!-- ## News
