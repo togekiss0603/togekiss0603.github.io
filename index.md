@@ -43,7 +43,7 @@ My current research and on-going work focuses on **VLMs/MLLMs, Agentic AI and 3D
 
 ## Technical Skills
 - Languages: Python, Matlab, C/C++
-- Frameworks: Pytorch, open3d, MinkowskiEngine
+- Frameworks: Pytorch, Isaaclab, open3d, MinkowskiEngine
 - Tools: Unity, Git, Conda, Cmake
 
 ## Selected Services
