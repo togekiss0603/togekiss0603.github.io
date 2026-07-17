@@ -10,17 +10,17 @@
 
   var widget = document.createElement("aside");
   widget.id = "beijing-weather-widget";
-  widget.setAttribute("aria-label", "北京市日期与实时天气");
+  widget.setAttribute("aria-label", "Beijing date and live weather");
   widget.innerHTML = [
     '<div class="weather-location">',
     '<span class="location-dot" aria-hidden="true"></span>',
-    "<span>中国 · 北京</span>",
+    "<span>Beijing · China</span>",
     "</div>",
     '<div class="calendar-row">',
     '<span class="calendar-day" id="beijing-calendar-day">--</span>',
     '<div class="calendar-detail">',
-    '<span id="beijing-calendar-month">----年--月</span>',
-    '<strong id="beijing-calendar-weekday">星期-</strong>',
+    '<span id="beijing-calendar-month">Month ----</span>',
+    '<strong id="beijing-calendar-weekday">Weekday</strong>',
     '<time id="beijing-clock">--:--:--</time>',
     "</div>",
     "</div>",
@@ -29,14 +29,14 @@
     '<span class="weather-icon" id="beijing-weather-icon" aria-hidden="true">✦</span>',
     '<div class="temperature-wrap">',
     '<strong id="beijing-temperature">--°</strong>',
-    '<span id="beijing-weather-description">正在获取天气…</span>',
+    '<span id="beijing-weather-description">Loading weather…</span>',
     "</div>",
     "</div>",
     '<div class="weather-meta">',
-    '<span id="beijing-feels-like">体感 --°</span>',
-    '<span id="beijing-humidity">湿度 --%</span>',
+    '<span id="beijing-feels-like">Feels --°</span>',
+    '<span id="beijing-humidity">Humidity --%</span>',
     "</div>",
-    '<div class="weather-source">实时天气 · Open-Meteo</div>'
+    '<div class="weather-source">Live weather · Open-Meteo</div>'
   ].join("");
   document.body.appendChild(widget);
 
@@ -51,7 +51,7 @@
   var humidityElement = document.getElementById("beijing-humidity");
 
   function partsFor(date) {
-    var formatter = new Intl.DateTimeFormat("zh-CN", {
+    var formatter = new Intl.DateTimeFormat("en-US", {
       timeZone: TIME_ZONE,
       year: "numeric",
       month: "long",
@@ -75,7 +75,7 @@
   function updateCalendar() {
     var parts = partsFor(new Date());
     dayElement.textContent = parts.day;
-    monthElement.textContent = parts.year + "年" + parts.month;
+    monthElement.textContent = parts.month + " " + parts.year;
     weekdayElement.textContent = parts.weekday;
     clockElement.textContent = parts.hour + ":" + parts.minute + ":" + parts.second;
     clockElement.dateTime = new Date().toISOString();
@@ -83,18 +83,18 @@
 
   function weatherDetails(code, isDay) {
     var night = Number(isDay) === 0;
-    if (code === 0) return { text: "晴朗", icon: night ? "☾" : "☀" };
-    if (code === 1) return { text: "大部晴朗", icon: night ? "☾" : "🌤" };
-    if (code === 2) return { text: "局部多云", icon: "⛅" };
-    if (code === 3) return { text: "阴天", icon: "☁" };
-    if (code === 45 || code === 48) return { text: "有雾", icon: "≋" };
-    if (code >= 51 && code <= 57) return { text: "细雨", icon: "🌦" };
-    if (code >= 61 && code <= 67) return { text: "降雨", icon: "🌧" };
-    if (code >= 71 && code <= 77) return { text: "降雪", icon: "❄" };
-    if (code >= 80 && code <= 82) return { text: "阵雨", icon: "🌧" };
-    if (code >= 85 && code <= 86) return { text: "阵雪", icon: "❄" };
-    if (code >= 95) return { text: "雷暴", icon: "ϟ" };
-    return { text: "天气多变", icon: "◌" };
+    if (code === 0) return { text: "Clear", icon: night ? "☾" : "☀" };
+    if (code === 1) return { text: "Mostly clear", icon: night ? "☾" : "🌤" };
+    if (code === 2) return { text: "Partly cloudy", icon: "⛅" };
+    if (code === 3) return { text: "Overcast", icon: "☁" };
+    if (code === 45 || code === 48) return { text: "Foggy", icon: "≋" };
+    if (code >= 51 && code <= 57) return { text: "Drizzle", icon: "🌦" };
+    if (code >= 61 && code <= 67) return { text: "Rain", icon: "🌧" };
+    if (code >= 71 && code <= 77) return { text: "Snow", icon: "❄" };
+    if (code >= 80 && code <= 82) return { text: "Rain showers", icon: "🌧" };
+    if (code >= 85 && code <= 86) return { text: "Snow showers", icon: "❄" };
+    if (code >= 95) return { text: "Thunderstorm", icon: "ϟ" };
+    return { text: "Variable weather", icon: "◌" };
   }
 
   function temperatureClass(temperature) {
@@ -113,8 +113,8 @@
     temperatureElement.textContent = temperature + "°";
     descriptionElement.textContent = details.text;
     iconElement.textContent = details.icon;
-    feelsLikeElement.textContent = "体感 " + apparent + "°";
-    humidityElement.textContent = "湿度 " + humidity + "%";
+    feelsLikeElement.textContent = "Feels " + apparent + "°";
+    humidityElement.textContent = "Humidity " + humidity + "%";
     widget.dataset.temperature = temperatureClass(temperature);
     widget.dataset.weather = details.text;
 
@@ -140,7 +140,7 @@
         updateWeather(data.current);
       })
       .catch(function () {
-        descriptionElement.textContent = "天气暂不可用";
+        descriptionElement.textContent = "Weather unavailable";
         iconElement.textContent = "◌";
       });
   }
