@@ -3,6 +3,8 @@
 
   var canvas = document.createElement("canvas");
   var context = canvas.getContext("2d");
+  var foregroundCanvas = document.createElement("canvas");
+  var foregroundContext = foregroundCanvas.getContext("2d");
   var baseCanvas = document.createElement("canvas");
   var baseContext = baseCanvas.getContext("2d");
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -18,7 +20,10 @@
 
   canvas.id = "van-gogh-background";
   canvas.setAttribute("aria-hidden", "true");
+  foregroundCanvas.id = "van-gogh-foreground";
+  foregroundCanvas.setAttribute("aria-hidden", "true");
   document.body.insertBefore(canvas, document.body.firstChild);
+  document.body.appendChild(foregroundCanvas);
 
   function random() {
     randomState |= 0;
@@ -350,7 +355,7 @@
         offset: random() * (width + 420),
         y: height * (0.12 + random() * 0.48),
         speed: 16 + random() * 12,
-        scale: sceneScale * (0.62 + random() * 0.32),
+        scale: sceneScale * (0.95 + random() * 0.4),
         phase: random() * Math.PI * 2
       });
     }
@@ -361,7 +366,7 @@
         offset: random() * (width + 620),
         y: height * (0.18 + random() * 0.38),
         speed: 11 + random() * 8,
-        scale: sceneScale * (0.66 + random() * 0.26),
+        scale: sceneScale * (0.9 + random() * 0.34),
         phase: random() * Math.PI * 2
       });
     }
@@ -750,24 +755,43 @@
     context.restore();
   }
 
-  function paintTravelers(time) {
+  function paintTravelers(time, targetContext, foregroundPass) {
     var travelTime = reducedMotion ? 0 : time * 0.001;
+    var originalContext = context;
+    context = targetContext;
 
     travelers.forEach(function (traveler) {
+      var depth = reducedMotion
+        ? -0.35
+        : Math.sin(time * 0.00045 + traveler.phase);
+      var isForeground = depth >= 0;
+
+      if (isForeground !== foregroundPass) {
+        return;
+      }
+
       var padding = traveler.type === "owl" ? 150 : 260;
       var x =
         (traveler.offset + travelTime * traveler.speed) % (width + padding) -
         padding * 0.55;
       var y =
         traveler.y +
-        (reducedMotion ? 0 : Math.sin(time * 0.0018 + traveler.phase) * 12);
+        (reducedMotion ? 0 : Math.sin(time * 0.0018 + traveler.phase) * 12) +
+        (depth + 1) * 24;
+      var depthScale = 0.72 + (depth + 1) * 0.38;
+
+      targetContext.save();
+      targetContext.globalAlpha = 0.58 + (depth + 1) * 0.2;
 
       if (traveler.type === "owl") {
-        paintOwl(x, y, traveler.scale, traveler.phase, time);
+        paintOwl(x, y, traveler.scale * depthScale, traveler.phase, time);
       } else {
-        paintReindeer(x, y, traveler.scale, traveler.phase, time);
+        paintReindeer(x, y, traveler.scale * depthScale, traveler.phase, time);
       }
+      targetContext.restore();
     });
+
+    context = originalContext;
   }
 
   function resize() {
@@ -781,6 +805,12 @@
     canvas.style.width = width + "px";
     canvas.style.height = height + "px";
     context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+
+    foregroundCanvas.width = canvas.width;
+    foregroundCanvas.height = canvas.height;
+    foregroundCanvas.style.width = width + "px";
+    foregroundCanvas.style.height = height + "px";
+    foregroundContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 
     baseCanvas.width = canvas.width;
     baseCanvas.height = canvas.height;
@@ -797,13 +827,15 @@
 
     lastPaint = time;
     context.clearRect(0, 0, width, height);
+    foregroundContext.clearRect(0, 0, width, height);
     context.drawImage(baseCanvas, 0, 0, width, height);
     paintWindBands(time);
     stars.forEach(function (star) {
       paintStar(star, time);
     });
     paintMoon(time);
-    paintTravelers(time);
+    paintTravelers(time, context, false);
+    paintTravelers(time, foregroundContext, true);
 
     if (!reducedMotion) {
       animationFrame = window.requestAnimationFrame(paint);
