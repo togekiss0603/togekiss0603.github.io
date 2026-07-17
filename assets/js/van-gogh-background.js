@@ -10,6 +10,7 @@
   var width = 0;
   var height = 0;
   var stars = [];
+  var travelers = [];
   var animationFrame;
   var lastPaint = 0;
   var resizeTimer;
@@ -337,6 +338,35 @@
     });
   }
 
+  function buildTravelers() {
+    travelers = [];
+    var sceneScale = Math.max(0.7, Math.min(width / 1280, 1.15));
+    var owlCount = width < 700 ? 2 : 3;
+    var reindeerCount = width < 700 ? 1 : 2;
+
+    for (var owl = 0; owl < owlCount; owl += 1) {
+      travelers.push({
+        type: "owl",
+        offset: random() * (width + 420),
+        y: height * (0.12 + random() * 0.48),
+        speed: 16 + random() * 12,
+        scale: sceneScale * (0.62 + random() * 0.32),
+        phase: random() * Math.PI * 2
+      });
+    }
+
+    for (var reindeer = 0; reindeer < reindeerCount; reindeer += 1) {
+      travelers.push({
+        type: "reindeer",
+        offset: random() * (width + 620),
+        y: height * (0.18 + random() * 0.38),
+        speed: 11 + random() * 8,
+        scale: sceneScale * (0.66 + random() * 0.26),
+        phase: random() * Math.PI * 2
+      });
+    }
+  }
+
   function buildBasePainting() {
     randomState = 1889;
     baseContext.clearRect(0, 0, width, height);
@@ -346,6 +376,7 @@
     paintCypress();
     paintCanvasGrain();
     buildStars();
+    buildTravelers();
   }
 
   function paintWindBands(time) {
@@ -501,6 +532,244 @@
     context.restore();
   }
 
+  function paintOwl(x, y, scale, phase, time) {
+    var flap = reducedMotion ? 0.35 : Math.sin(time * 0.006 + phase);
+
+    context.save();
+    context.translate(x, y);
+    context.scale(scale, scale);
+    context.rotate(Math.sin(time * 0.0015 + phase) * 0.045);
+    context.lineJoin = "round";
+    context.lineCap = "round";
+    context.strokeStyle = "#152444";
+    context.lineWidth = 4;
+    context.shadowColor = "rgba(2, 10, 34, 0.48)";
+    context.shadowBlur = 8;
+    context.shadowOffsetY = 4;
+
+    context.fillStyle = "#8d5b3f";
+    context.beginPath();
+    context.moveTo(-20, -2);
+    context.quadraticCurveTo(-48, -15 - flap * 12, -55, 8 - flap * 5);
+    context.quadraticCurveTo(-38, 28, -13, 20);
+    context.closePath();
+    context.fill();
+    context.stroke();
+
+    context.beginPath();
+    context.moveTo(20, -2);
+    context.quadraticCurveTo(48, -15 - flap * 12, 55, 8 - flap * 5);
+    context.quadraticCurveTo(38, 28, 13, 20);
+    context.closePath();
+    context.fill();
+    context.stroke();
+
+    context.fillStyle = "#b97a4e";
+    context.beginPath();
+    context.ellipse(0, 5, 29, 32, 0, 0, Math.PI * 2);
+    context.fill();
+    context.stroke();
+
+    context.fillStyle = "#dca75c";
+    context.beginPath();
+    context.moveTo(-26, -13);
+    context.lineTo(-16, -37);
+    context.lineTo(-5, -23);
+    context.lineTo(5, -23);
+    context.lineTo(16, -37);
+    context.lineTo(26, -13);
+    context.quadraticCurveTo(22, 12, 0, 18);
+    context.quadraticCurveTo(-22, 12, -26, -13);
+    context.closePath();
+    context.fill();
+    context.stroke();
+
+    context.fillStyle = "#f3d68b";
+    context.beginPath();
+    context.ellipse(-11, -7, 12, 15, -0.12, 0, Math.PI * 2);
+    context.ellipse(11, -7, 12, 15, 0.12, 0, Math.PI * 2);
+    context.fill();
+    context.stroke();
+
+    context.fillStyle = "#10213d";
+    context.beginPath();
+    context.arc(-10, -7, 5.5, 0, Math.PI * 2);
+    context.arc(10, -7, 5.5, 0, Math.PI * 2);
+    context.fill();
+
+    context.fillStyle = "#fffbe5";
+    context.beginPath();
+    context.arc(-8.5, -9, 1.8, 0, Math.PI * 2);
+    context.arc(11.5, -9, 1.8, 0, Math.PI * 2);
+    context.fill();
+
+    context.fillStyle = "#efb52f";
+    context.beginPath();
+    context.moveTo(0, -2);
+    context.lineTo(7, 6);
+    context.lineTo(0, 10);
+    context.lineTo(-7, 6);
+    context.closePath();
+    context.fill();
+    context.stroke();
+
+    context.strokeStyle = "rgba(255, 221, 112, 0.8)";
+    context.lineWidth = 2.4;
+    for (var mark = -1; mark <= 1; mark += 1) {
+      context.beginPath();
+      context.moveTo(mark * 10 - 3, 17);
+      context.quadraticCurveTo(mark * 10, 24, mark * 10 + 5, 27);
+      context.stroke();
+    }
+    context.restore();
+  }
+
+  function paintReindeer(x, y, scale, phase, time) {
+    var stride = reducedMotion ? 0.25 : Math.sin(time * 0.0045 + phase);
+    var bob = reducedMotion ? 0 : Math.sin(time * 0.0028 + phase) * 3;
+
+    context.save();
+    context.translate(x, y + bob);
+    context.scale(scale, scale);
+    context.rotate(-0.035 + Math.sin(time * 0.0012 + phase) * 0.025);
+    context.lineJoin = "round";
+    context.lineCap = "round";
+    context.strokeStyle = "#17243a";
+    context.lineWidth = 4;
+    context.shadowColor = "rgba(2, 10, 34, 0.5)";
+    context.shadowBlur = 9;
+    context.shadowOffsetY = 4;
+
+    context.fillStyle = "#d95f5c";
+    context.beginPath();
+    context.moveTo(-35, -12);
+    context.quadraticCurveTo(-67, -30, -94, -21 + stride * 5);
+    context.quadraticCurveTo(-70, -15, -48, 0);
+    context.closePath();
+    context.fill();
+    context.stroke();
+    context.strokeStyle = "#f2c14f";
+    context.lineWidth = 3;
+    context.beginPath();
+    context.moveTo(-48, -10);
+    context.quadraticCurveTo(-70, -22, -91, -20 + stride * 5);
+    context.stroke();
+
+    context.strokeStyle = "#17243a";
+    context.lineWidth = 4;
+    context.fillStyle = "#9b6545";
+    context.beginPath();
+    context.ellipse(-4, 3, 43, 25, 0.05, 0, Math.PI * 2);
+    context.fill();
+    context.stroke();
+
+    context.fillStyle = "#b97d50";
+    context.beginPath();
+    context.moveTo(24, -6);
+    context.quadraticCurveTo(32, -39, 49, -43);
+    context.lineTo(63, -27);
+    context.quadraticCurveTo(48, -8, 35, 8);
+    context.closePath();
+    context.fill();
+    context.stroke();
+
+    context.beginPath();
+    context.ellipse(58, -39, 25, 18, -0.15, 0, Math.PI * 2);
+    context.fill();
+    context.stroke();
+
+    context.fillStyle = "#d9a169";
+    context.beginPath();
+    context.ellipse(74, -35, 14, 10, -0.1, 0, Math.PI * 2);
+    context.fill();
+    context.stroke();
+
+    context.fillStyle = "#e75f53";
+    context.beginPath();
+    context.arc(87, -37, 6.5, 0, Math.PI * 2);
+    context.fill();
+    context.stroke();
+
+    context.fillStyle = "#fff7c8";
+    context.beginPath();
+    context.arc(58, -44, 4.5, 0, Math.PI * 2);
+    context.fill();
+    context.stroke();
+    context.fillStyle = "#13213a";
+    context.beginPath();
+    context.arc(59, -44, 2, 0, Math.PI * 2);
+    context.fill();
+
+    context.fillStyle = "#8a593d";
+    context.beginPath();
+    context.moveTo(43, -51);
+    context.lineTo(33, -64);
+    context.lineTo(52, -58);
+    context.closePath();
+    context.fill();
+    context.stroke();
+
+    context.strokeStyle = "#6f4a34";
+    context.lineWidth = 4;
+    context.beginPath();
+    context.moveTo(48, -55);
+    context.quadraticCurveTo(38, -78, 48, -91);
+    context.moveTo(47, -72);
+    context.lineTo(34, -82);
+    context.moveTo(46, -79);
+    context.lineTo(58, -91);
+    context.moveTo(61, -54);
+    context.quadraticCurveTo(58, -76, 70, -87);
+    context.moveTo(62, -70);
+    context.lineTo(75, -78);
+    context.stroke();
+
+    context.strokeStyle = "#17243a";
+    context.lineWidth = 5;
+    context.beginPath();
+    context.moveTo(-24, 18);
+    context.lineTo(-50, 32 + stride * 9);
+    context.lineTo(-64, 29 + stride * 12);
+    context.moveTo(-5, 22);
+    context.lineTo(-29, 41 - stride * 7);
+    context.lineTo(-42, 42 - stride * 9);
+    context.moveTo(18, 19);
+    context.lineTo(43, 32 - stride * 9);
+    context.lineTo(59, 27 - stride * 12);
+    context.moveTo(31, 13);
+    context.lineTo(57, 20 + stride * 7);
+    context.lineTo(71, 14 + stride * 9);
+    context.stroke();
+
+    context.strokeStyle = "#f0c04c";
+    context.lineWidth = 3;
+    context.beginPath();
+    context.moveTo(-33, -11);
+    context.quadraticCurveTo(0, 2, 34, -5);
+    context.stroke();
+    context.restore();
+  }
+
+  function paintTravelers(time) {
+    var travelTime = reducedMotion ? 0 : time * 0.001;
+
+    travelers.forEach(function (traveler) {
+      var padding = traveler.type === "owl" ? 150 : 260;
+      var x =
+        (traveler.offset + travelTime * traveler.speed) % (width + padding) -
+        padding * 0.55;
+      var y =
+        traveler.y +
+        (reducedMotion ? 0 : Math.sin(time * 0.0018 + traveler.phase) * 12);
+
+      if (traveler.type === "owl") {
+        paintOwl(x, y, traveler.scale, traveler.phase, time);
+      } else {
+        paintReindeer(x, y, traveler.scale, traveler.phase, time);
+      }
+    });
+  }
+
   function resize() {
     window.cancelAnimationFrame(animationFrame);
     width = window.innerWidth;
@@ -534,6 +803,7 @@
       paintStar(star, time);
     });
     paintMoon(time);
+    paintTravelers(time);
 
     if (!reducedMotion) {
       animationFrame = window.requestAnimationFrame(paint);
