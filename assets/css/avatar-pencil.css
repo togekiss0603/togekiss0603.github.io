@@ -1,0 +1,130 @@
+.image.avatar {
+  position: relative;
+  display: inline-block;
+  width: 176px;
+  height: 176px;
+  margin: 4px auto 24px;
+  padding: 0;
+  border-radius: 9px 6px 10px 7px !important;
+  isolation: isolate;
+  filter: drop-shadow(0 10px 15px rgba(8, 18, 45, 0.3));
+}
+
+.image.avatar img {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  border-radius: 7px 5px 9px 6px !important;
+  object-fit: cover;
+  object-position: 50% 28%;
+  clip-path: polygon(
+    1.5% 2.5%,
+    25% 0.8%,
+    51% 1.8%,
+    76% 0.5%,
+    98.5% 2.2%,
+    99.4% 26%,
+    98.2% 52%,
+    99.2% 77%,
+    97.8% 98.5%,
+    74% 99.2%,
+    49% 98.1%,
+    24% 99.4%,
+    1.2% 97.6%,
+    0.6% 75%,
+    1.8% 49%,
+    0.5% 24%
+  );
+}
+
+.image.avatar::before,
+.image.avatar::after {
+  content: "";
+  display: block !important;
+  position: absolute;
+  pointer-events: none;
+  background: transparent;
+  opacity: 1;
+}
+
+.image.avatar::before {
+  z-index: 1;
+  inset: -7px -6px -6px -8px;
+  border: 4px solid rgba(37, 62, 101, 0.9);
+  border-radius: 11px 7px 13px 8px;
+  transform: rotate(-0.9deg);
+  box-shadow:
+    2px 1px 0 rgba(238, 105, 112, 0.75),
+    -2px -1px 0 rgba(244, 190, 60, 0.82),
+    4px -2px 0 rgba(71, 153, 181, 0.58),
+    -3px 3px 0 rgba(105, 78, 151, 0.48);
+  clip-path: polygon(
+    0.8% 3%,
+    19% 0.4%,
+    40% 1.8%,
+    62% 0.3%,
+    82% 1.5%,
+    99% 0.8%,
+    98% 19%,
+    99.6% 39%,
+    98.4% 62%,
+    99.2% 82%,
+    97% 99.4%,
+    80% 98.1%,
+    61% 99.5%,
+    39% 98.2%,
+    18% 99.6%,
+    0.5% 97%,
+    1.9% 79%,
+    0.2% 58%,
+    1.5% 37%,
+    0.3% 17%
+  );
+}
+
+.image.avatar::after {
+  z-index: 3;
+  inset: -4px -8px -8px -4px;
+  border: 2px dashed rgba(247, 201, 73, 0.88);
+  border-radius: 8px 12px 7px 11px;
+  transform: rotate(0.75deg);
+  box-shadow:
+    inset 1px 0 rgba(255, 247, 208, 0.7),
+    1px -2px 0 rgba(236, 103, 122, 0.62),
+    -2px 2px 0 rgba(65, 134, 178, 0.64);
+  mix-blend-mode: multiply;
+}
+
+@media (prefers-color-scheme: dark) {
+  .image.avatar::before {
+    border-color: rgba(108, 189, 220, 0.88);
+    box-shadow:
+      2px 1px 0 rgba(247, 119, 129, 0.82),
+      -2px -1px 0 rgba(255, 211, 91, 0.9),
+      4px -2px 0 rgba(94, 186, 211, 0.68),
+      -3px 3px 0 rgba(170, 129, 210, 0.58);
+  }
+
+  .image.avatar::after {
+    mix-blend-mode: screen;
+  }
+}
+
+@media print, screen and (max-width: 960px) {
+  .image.avatar,
+  .image.avatar img {
+    width: 150px !important;
+    height: 150px !important;
+  }
+}
+
+@media print, screen and (max-width: 480px) {
+  .image.avatar,
+  .image.avatar img {
+    width: 132px !important;
+    height: 132px !important;
+  }
+}
