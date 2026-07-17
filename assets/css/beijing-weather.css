@@ -1,0 +1,229 @@
+#beijing-weather-widget {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 2;
+  width: 220px;
+  box-sizing: border-box;
+  padding: 17px 18px 14px;
+  color: #fff8dc;
+  font-family: "Crimson Pro", Georgia, serif;
+  background:
+    linear-gradient(145deg, rgba(255, 215, 103, 0.1), transparent 42%),
+    rgba(5, 25, 61, 0.86);
+  border: 2px solid rgba(244, 194, 65, 0.72);
+  border-radius: 18px 13px 20px 15px;
+  box-shadow:
+    0 14px 35px rgba(1, 9, 31, 0.46),
+    inset 0 0 24px rgba(61, 144, 185, 0.16),
+    2px -1px 0 rgba(67, 148, 185, 0.46),
+    -2px 2px 0 rgba(232, 126, 67, 0.4);
+  -webkit-backdrop-filter: blur(13px) saturate(130%);
+  backdrop-filter: blur(13px) saturate(130%);
+  transform: rotate(0.15deg);
+  overflow: hidden;
+}
+
+#beijing-weather-widget::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  pointer-events: none;
+  border: 1px dashed rgba(255, 226, 128, 0.3);
+  border-radius: 13px 10px 15px 11px;
+}
+
+.weather-location {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #f8d565;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.location-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #efb83e;
+  box-shadow: 0 0 9px #f6c84f;
+}
+
+.calendar-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 7px;
+}
+
+.calendar-day {
+  min-width: 66px;
+  color: #fff5c8;
+  font-size: 58px;
+  font-weight: 650;
+  line-height: 0.94;
+  text-shadow:
+    2px 2px 0 rgba(222, 112, 51, 0.62),
+    0 0 12px rgba(255, 210, 77, 0.28);
+}
+
+.calendar-detail {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.28;
+}
+
+.calendar-detail span {
+  color: #b9dcea;
+  font-size: 12px;
+}
+
+.calendar-detail strong {
+  color: #fff2b4;
+  font-size: 17px;
+}
+
+#beijing-clock {
+  color: #83c9e0;
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.weather-divider {
+  position: relative;
+  height: 2px;
+  margin: 12px 0 10px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(246, 199, 74, 0.76) 0 12px,
+      rgba(91, 170, 201, 0.55) 12px 20px,
+      transparent 20px 24px
+    );
+  border-radius: 50%;
+}
+
+.weather-current {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.weather-icon {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  color: #ffd75a;
+  font-family: Georgia, serif;
+  font-size: 39px;
+  line-height: 1;
+  text-shadow: 0 0 14px rgba(255, 205, 66, 0.62);
+  animation: weather-float 3.6s ease-in-out infinite;
+}
+
+.temperature-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+#beijing-temperature {
+  color: #fff7d2;
+  font-size: 35px;
+  font-weight: 650;
+  line-height: 0.95;
+}
+
+#beijing-weather-description {
+  margin-top: 4px;
+  color: #bfe1eb;
+  font-size: 14px;
+}
+
+.weather-meta {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 11px;
+  color: #a9d0de;
+  font-size: 11px;
+}
+
+.weather-source {
+  position: relative;
+  margin-top: 8px;
+  color: rgba(214, 232, 232, 0.58);
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  text-align: right;
+}
+
+#beijing-weather-widget[data-temperature="hot"] {
+  border-color: rgba(244, 136, 65, 0.8);
+  box-shadow:
+    0 14px 35px rgba(1, 9, 31, 0.46),
+    inset 0 0 26px rgba(225, 105, 42, 0.22),
+    2px -1px 0 rgba(247, 180, 62, 0.52);
+}
+
+#beijing-weather-widget[data-temperature="cold"] {
+  border-color: rgba(127, 208, 238, 0.78);
+  box-shadow:
+    0 14px 35px rgba(1, 9, 31, 0.46),
+    inset 0 0 28px rgba(91, 181, 225, 0.24),
+    2px -1px 0 rgba(213, 240, 245, 0.46);
+}
+
+@keyframes weather-float {
+  0%,
+  100% {
+    transform: translateY(1px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+}
+
+@media (max-width: 1380px) {
+  #beijing-weather-widget {
+    position: relative;
+    top: auto;
+    right: auto;
+    clear: both;
+    width: min(650px, calc(100% - 30px));
+    margin: 16px auto 28px;
+    transform: none;
+  }
+
+  .calendar-row,
+  .weather-current {
+    justify-content: center;
+  }
+
+  .weather-location {
+    justify-content: center;
+  }
+
+  .weather-meta {
+    justify-content: center;
+    gap: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .weather-icon {
+    animation: none;
+  }
+}
+
+@media print {
+  #beijing-weather-widget {
+    display: none;
+  }
+}

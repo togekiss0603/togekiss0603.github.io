@@ -3,8 +3,6 @@
 
   var canvas = document.createElement("canvas");
   var context = canvas.getContext("2d");
-  var foregroundCanvas = document.createElement("canvas");
-  var foregroundContext = foregroundCanvas.getContext("2d");
   var baseCanvas = document.createElement("canvas");
   var baseContext = baseCanvas.getContext("2d");
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -13,6 +11,8 @@
   var height = 0;
   var stars = [];
   var travelers = [];
+  var weatherParticles = [];
+  var weatherState = { code: 0, temperature: 20, condition: "clear" };
   var animationFrame;
   var lastPaint = 0;
   var resizeTimer;
@@ -20,10 +20,7 @@
 
   canvas.id = "van-gogh-background";
   canvas.setAttribute("aria-hidden", "true");
-  foregroundCanvas.id = "van-gogh-foreground";
-  foregroundCanvas.setAttribute("aria-hidden", "true");
   document.body.insertBefore(canvas, document.body.firstChild);
-  document.body.appendChild(foregroundCanvas);
 
   function random() {
     randomState |= 0;
@@ -755,21 +752,13 @@
     context.restore();
   }
 
-  function paintTravelers(time, targetContext, foregroundPass) {
+  function paintTravelers(time) {
     var travelTime = reducedMotion ? 0 : time * 0.001;
-    var originalContext = context;
-    context = targetContext;
 
     travelers.forEach(function (traveler) {
       var depth = reducedMotion
-        ? -0.35
+        ? 0
         : Math.sin(time * 0.00045 + traveler.phase);
-      var isForeground = depth >= 0;
-
-      if (isForeground !== foregroundPass) {
-        return;
-      }
-
       var padding = traveler.type === "owl" ? 150 : 260;
       var x =
         (traveler.offset + travelTime * traveler.speed) % (width + padding) -
@@ -777,21 +766,160 @@
       var y =
         traveler.y +
         (reducedMotion ? 0 : Math.sin(time * 0.0018 + traveler.phase) * 12) +
-        (depth + 1) * 24;
-      var depthScale = 0.72 + (depth + 1) * 0.38;
+        depth * 10;
+      var depthScale = 0.9 + (depth + 1) * 0.12;
 
-      targetContext.save();
-      targetContext.globalAlpha = 0.58 + (depth + 1) * 0.2;
+      context.save();
+      context.globalAlpha = 0.72 + (depth + 1) * 0.1;
 
       if (traveler.type === "owl") {
         paintOwl(x, y, traveler.scale * depthScale, traveler.phase, time);
       } else {
         paintReindeer(x, y, traveler.scale * depthScale, traveler.phase, time);
       }
-      targetContext.restore();
+      context.restore();
     });
+  }
 
-    context = originalContext;
+  function weatherCondition(code) {
+    if (
+      (code >= 51 && code <= 67) ||
+      (code >= 80 && code <= 82) ||
+      (code >= 95 && code <= 99)
+    ) {
+      return "rain";
+    }
+    if ((code >= 71 && code <= 77) || (code >= 85 && code <= 86)) {
+      return "snow";
+    }
+    if (code === 45 || code === 48) {
+      return "fog";
+    }
+    if (code >= 1 && code <= 3) {
+      return "cloud";
+    }
+    return "clear";
+  }
+
+  function buildWeatherParticles() {
+    weatherParticles = [];
+    var condition = weatherState.condition;
+    var count =
+      condition === "rain"
+        ? Math.min(190, Math.max(90, Math.round(width / 7)))
+        : condition === "snow"
+          ? Math.min(130, Math.max(60, Math.round(width / 11)))
+          : 0;
+
+    for (var index = 0; index < count; index += 1) {
+      weatherParticles.push({
+        x: Math.random(),
+        y: Math.random(),
+        speed: 0.6 + Math.random() * 1.1,
+        size: 1.5 + Math.random() * 3.8,
+        phase: Math.random() * Math.PI * 2
+      });
+    }
+  }
+
+  function paintTemperatureTint() {
+    var temperature = weatherState.temperature;
+    var color;
+    var strength;
+
+    if (temperature >= 30) {
+      color = "224, 105, 35";
+      strength = Math.min(0.2, 0.08 + (temperature - 30) * 0.012);
+    } else if (temperature <= 5) {
+      color = "92, 173, 220";
+      strength = Math.min(0.22, 0.08 + (5 - temperature) * 0.009);
+    } else {
+      color = "242, 183, 68";
+      strength = 0.035;
+    }
+
+    context.fillStyle = "rgba(" + color + ", " + strength + ")";
+    context.fillRect(0, 0, width, height);
+  }
+
+  function paintCloudLayer(time, foggy) {
+    var drift = reducedMotion ? 0 : time * (foggy ? 0.004 : 0.008);
+    var cloudCount = foggy ? 7 : 5;
+
+    context.save();
+    context.globalAlpha = foggy ? 0.24 : 0.18;
+    context.filter = "blur(" + (foggy ? 18 : 12) + "px)";
+
+    for (var index = 0; index < cloudCount; index += 1) {
+      var span = width + 420;
+      var x = (index * span / cloudCount + drift) % span - 210;
+      var y = height * (0.12 + index * 0.085);
+      var cloud = context.createRadialGradient(x, y, 10, x, y, 170);
+      cloud.addColorStop(0, foggy ? "#dce6dc" : "#a9c4ce");
+      cloud.addColorStop(0.5, foggy ? "rgba(208, 220, 214, 0.72)" : "rgba(89, 128, 153, 0.58)");
+      cloud.addColorStop(1, "rgba(30, 58, 89, 0)");
+      context.fillStyle = cloud;
+      context.beginPath();
+      context.ellipse(x, y, 230, foggy ? 58 : 82, 0, 0, Math.PI * 2);
+      context.fill();
+    }
+    context.restore();
+  }
+
+  function paintRain(time) {
+    context.save();
+    context.lineCap = "round";
+    context.strokeStyle = "rgba(150, 215, 246, 0.68)";
+    context.shadowColor = "rgba(108, 190, 235, 0.65)";
+    context.shadowBlur = 4;
+
+    weatherParticles.forEach(function (drop) {
+      var motion = reducedMotion ? 0 : time * 0.48 * drop.speed;
+      var y = (drop.y * height + motion) % (height + 80) - 40;
+      var x = (drop.x * width + y * 0.16 + drop.phase * 13) % (width + 40) - 20;
+      context.lineWidth = drop.size * 0.52;
+      context.beginPath();
+      context.moveTo(x, y);
+      context.lineTo(x - 8 - drop.size, y + 20 + drop.size * 3);
+      context.stroke();
+    });
+    context.restore();
+  }
+
+  function paintSnow(time) {
+    context.save();
+    context.fillStyle = "rgba(247, 250, 235, 0.9)";
+    context.shadowColor = "rgba(190, 225, 255, 0.9)";
+    context.shadowBlur = 7;
+
+    weatherParticles.forEach(function (flake) {
+      var motion = reducedMotion ? 0 : time * 0.045 * flake.speed;
+      var y = (flake.y * height + motion) % (height + 50) - 25;
+      var x =
+        flake.x * width +
+        Math.sin(time * 0.0015 + flake.phase + y * 0.01) * (12 + flake.size * 4);
+      context.globalAlpha = 0.5 + flake.speed * 0.28;
+      context.beginPath();
+      context.arc(x, y, flake.size, 0, Math.PI * 2);
+      context.fill();
+    });
+    context.restore();
+  }
+
+  function paintWeather(time) {
+    paintTemperatureTint();
+
+    if (weatherState.condition === "rain") {
+      paintCloudLayer(time, false);
+      paintRain(time);
+    } else if (weatherState.condition === "snow") {
+      paintCloudLayer(time, false);
+      paintSnow(time);
+    } else if (weatherState.condition === "fog") {
+      paintCloudLayer(time, true);
+    } else if (weatherState.condition === "cloud") {
+      paintCloudLayer(time, false);
+    }
   }
 
   function resize() {
@@ -806,16 +934,11 @@
     canvas.style.height = height + "px";
     context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 
-    foregroundCanvas.width = canvas.width;
-    foregroundCanvas.height = canvas.height;
-    foregroundCanvas.style.width = width + "px";
-    foregroundCanvas.style.height = height + "px";
-    foregroundContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
-
     baseCanvas.width = canvas.width;
     baseCanvas.height = canvas.height;
     baseContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
     buildBasePainting();
+    buildWeatherParticles();
     paint(performance.now());
   }
 
@@ -827,15 +950,14 @@
 
     lastPaint = time;
     context.clearRect(0, 0, width, height);
-    foregroundContext.clearRect(0, 0, width, height);
     context.drawImage(baseCanvas, 0, 0, width, height);
     paintWindBands(time);
     stars.forEach(function (star) {
       paintStar(star, time);
     });
     paintMoon(time);
-    paintTravelers(time, context, false);
-    paintTravelers(time, foregroundContext, true);
+    paintTravelers(time);
+    paintWeather(time);
 
     if (!reducedMotion) {
       animationFrame = window.requestAnimationFrame(paint);
@@ -845,6 +967,21 @@
   window.addEventListener("resize", function () {
     window.clearTimeout(resizeTimer);
     resizeTimer = window.setTimeout(resize, 180);
+  });
+
+  window.addEventListener("beijing-weather-updated", function (event) {
+    var detail = event.detail || {};
+    var temperature = Number(detail.temperature);
+    var code = Number(detail.code);
+
+    if (Number.isFinite(temperature)) {
+      weatherState.temperature = temperature;
+    }
+    if (Number.isFinite(code)) {
+      weatherState.code = code;
+      weatherState.condition = weatherCondition(code);
+    }
+    buildWeatherParticles();
   });
 
   document.addEventListener("visibilitychange", function () {
