@@ -1,5 +1,10 @@
 main:
 
+  - title: "RouteGraph-Mona: Confusion-Aware Routing Fine-Tuning for Mineral Image Classification <em>(under review)</em>"
+    conference_short: PRICAI 2026
+    conference: PRICAI 2026, <em>under review</em>.
+    image: ./assets/img/PRICAI2026.png
+
   - title: Adaptive Sampling and Joint Semantic-Channel Coding under Dynamic Channel Environment
     authors: <strong>Zhiyuan Qi</strong>, Yulong Feng, Zhijin Qin
     conference_short: ICC 2025
