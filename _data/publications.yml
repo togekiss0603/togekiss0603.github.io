@@ -1,5 +1,10 @@
 main:
 
+  - title: "CueShiftBench: How Heuristic Cues Shape Multimodal Reward Evaluation <em>(under review)</em>"
+    conference_short: NAACL 2027
+    conference: NAACL 2027, <em>under review</em>.
+    image: ./assets/img/NAACL2027.png
+
   - title: "RouteGraph-Mona: Confusion-Aware Routing Fine-Tuning for Mineral Image Classification <em>(under review)</em>"
     conference_short: PRICAI 2026
     conference: PRICAI 2026, <em>under review</em>.
