@@ -4,6 +4,8 @@ layout: homepage
 
 ## About Me
 
+<div class="about-me" markdown="1">
+
 I am a second-year M.S. student in the [Department of Electronic Engineering](https://www.ee.tsinghua.edu.cn/) at **Tsinghua University**, and I am majoring in Artificial Intelligence. I'm so fortunated to work with [Dr.Yifan Shen](https://shenyifans.github.io/) and [Dr.Jiateng Liu](https://lumos-jiateng.github.io/) at **UIUC**, advised by [Prof. Heng Ji](https://blender.cs.illinois.edu/hengji.html).
 <!-- Prior to this, I have completed my bachelor’s degree in the [School of Electronic and Information Engineering at Beijing Jiaotong University](https://eie.bjtu.edu.cn/) in 2024. -->
 
@@ -13,6 +15,8 @@ My long-term goal is to make the way **MLLMs** understand and represent **3D spa
 <!-- **compression and transmission for point clouds**, and I am also interested in **Embodied Intelligence** and **World Model**. **My primary research objectives are to decouple the geometry and semantics for 4D representations, and to explore intelligence for joint spatial-temporal continuous perception keeping me passionate.** I would be sincerely delighted to exchange ideas and seek collaboration opportunities with researchers and peers! -->
 
 **I'm currently seeking PhD and research intern position/work opportunities for fall 2027!** Please **contact me** for details!
+
+</div>
 
 ## Research Interests
 - **Multimodal Learning/MLLM:** Spatial Intelligence, Unified Multimodal Understanding and Generation Models, LLM/VLM Agent, Agentic AI
