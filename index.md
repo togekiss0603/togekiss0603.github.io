@@ -15,9 +15,8 @@ My long-term goal is to make the way **MLLMs** understand and represent **3D spa
 **I'm currently seeking PhD and research intern position/work opportunities for fall 2027!** Please **contact me** for details!
 
 ## Research Interests
-- **Multimodal Learning/MLLM:** Spatial Intelligence, Unified Multimodal Understanding and Generation Models
-- **3D Vision:** World Model, 3DGS 
-- **Agentic AI:** LLM/VLM Agent
+- **Multimodal Learning/MLLM:** Spatial Intelligence, Unified Multimodal Understanding and Generation Models, LLM/VLM Agent, Agentic AI
+- **3D Vision:** World Model, 3DGS, Controllable Video Generation
 
 ## News
 
