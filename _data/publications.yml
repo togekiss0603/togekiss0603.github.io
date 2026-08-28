@@ -5,9 +5,10 @@ main:
     conference: NAACL 2027, <em>under review</em>.
     image: ./assets/img/NAACL2027.png
 
-  - title: "RouteGraph-Mona: Confusion-Aware Routing Fine-Tuning for Mineral Image Classification <em>(under review)</em>"
+  - title: "RouteGraph-Mona: Confusion-Aware Routing Fine-Tuning for Mineral Image Classification"
+    authors: Jierui Li*, <strong>Zhiyuan Qi*</strong>, Hao Zhu, Yufan Liu, Jixian Liu, Shaojie Jiang, Jianda Wang, Yaqi Liu, Xiaotong Li, Wei Wang (*Equal contribution)
     conference_short: PRICAI 2026
-    conference: PRICAI 2026, <em>under review</em>.
+    conference: PRICAI 2026.
     image: ./assets/img/PRICAI2026.png
 
   - title: Adaptive Sampling and Joint Semantic-Channel Coding under Dynamic Channel Environment
