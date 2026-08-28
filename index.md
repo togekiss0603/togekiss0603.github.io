@@ -17,6 +17,9 @@ My current research and on-going work focuses on **VLMs/MLLMs, Agentic AI and 3D
 - **LLM Agent/Agentic AI/VLMs/MLLMs:** Vision-driven LLM Agent, Multimodal Reasoning, Spatial Intelligence
 - **3D Computer Vision:** World Model, 3DGS, Learning for 4D Representation 
 
+## News
+
+- **[Aug. 2026]** Our paper *RouteGraph-Mona* is accepted by **PRICAI 2026**!
 
 <!-- ## News -->
 <!-- ## News
