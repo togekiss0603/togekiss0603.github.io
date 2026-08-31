@@ -35,14 +35,14 @@ main:
     #notes: Oral Presentation
     image: ./assets/img/CM2025.png
 
-  - title: About MLLM Agent, submitted to EMNLP 2026, <em>under review</em>
+  - title: "FurniReason: Zero-Shot Vision-Language Reasoning for Manual-Guided Furniture Assembly, <em>under review</em>"
     authors: <strong>Co-first Author</strong>, work done while interning at UIUC
-    conference_short: EMNLP 2026
-    conference: Empirical Methods in Natural Language Processing, 2026.
+    conference_short: AAAI 2027
+    conference: AAAI Conference on Artificial Intelligence, 2027.
     #pdf: https://arxiv.org/pdf/2510.13408
     #page: https://arxiv.org/abs/2510.13408
     #code: https://github.com/yaoyao-liu/class-incremental-learning/tree/main/mnemonics-training
     #page: https://class-il.mpi-inf.mpg.de/mnemonics/
     # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
     #notes: Oral Presentation
-    image: ./assets/img/underreview.png
+    image: ./assets/img/AAAI2027.png
