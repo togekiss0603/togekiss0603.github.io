@@ -9,7 +9,17 @@
 
 html {
   min-height: 100%;
-  background: #071b45;
+  background-color: #071b45;
+  background-image: linear-gradient(
+    to bottom,
+    #061438 0%,
+    #0a2e67 38%,
+    #17659a 68%,
+    #8a8d63 79%,
+    #d59a2c 100%
+  );
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 body {

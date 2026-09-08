@@ -16,6 +16,7 @@
 
     <link rel="icon" media="(prefers-color-scheme:dark)" href="{{ site.favicon_dark }}" type="image/png" />
     <link rel="icon" media="(prefers-color-scheme:light)" href="{{ site.favicon }}" type="image/png" />
+    <link rel="preload" href="{{ "/assets/js/van-gogh-background.js" | relative_url }}" as="script">
     <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
 
     <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
@@ -98,9 +99,10 @@
       <section>
 
       {{ content }}
+        <script src="{{ "/assets/js/van-gogh-background.js" | relative_url }}"></script>
         <!-- Visitor map -->
         <div style="margin-top: 30px; text-align: center;">
-          <script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=ffffff&w=a&t=tt&d=mimMKRAAli-zSS2UDdRbmlLd_oFy2cp_BCUeqsLi8sg'></script>
+          <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?cl=ffffff&amp;w=a&amp;t=tt&amp;d=mimMKRAAli-zSS2UDdRbmlLd_oFy2cp_BCUeqsLi8sg"></script>
         </div>
       <br>
 
@@ -116,7 +118,6 @@
     </div>
     
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
-    <script src="{{ "/assets/js/van-gogh-background.js" | relative_url }}"></script>
     <script src="{{ "/assets/js/beijing-weather.js" | relative_url }}"></script>
     <!-- <script src="{{ "/assets/js/rainbow-cursor.js" | relative_url }}"></script> -->
     {% if site.google_analytics %}
