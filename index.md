@@ -14,7 +14,7 @@ My current research focuses on ***Spatial Intelligence for MLLM***, specifically
 My long-term goal is to make the way **MLLMs** understand and represent **3D space** and ultimately the **real world** both controllable and interpretable.
 <!-- **compression and transmission for point clouds**, and I am also interested in **Embodied Intelligence** and **World Model**. **My primary research objectives are to decouple the geometry and semantics for 4D representations, and to explore intelligence for joint spatial-temporal continuous perception keeping me passionate.** I would be sincerely delighted to exchange ideas and seek collaboration opportunities with researchers and peers! -->
 
-**I'm currently seeking PhD and research intern position/work opportunities for fall 2027!** Please **contact me** for details!
+**I'm currently seeking work opportunities!** Please **contact me** for details!
 
 </div>
 
