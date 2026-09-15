@@ -14,6 +14,7 @@
   var weatherParticles = [];
   var weatherState = { code: 0, temperature: 20, condition: "clear" };
   var animationFrame;
+  var buildFrame;
   var lastPaint = 0;
   var resizeTimer;
   var randomState = 1889;
@@ -379,6 +380,18 @@
     paintCanvasGrain();
     buildStars();
     buildTravelers();
+  }
+
+  function paintInitialFrame() {
+    var gradient = context.createLinearGradient(0, 0, 0, height);
+    gradient.addColorStop(0, "#061438");
+    gradient.addColorStop(0.38, "#0a2e67");
+    gradient.addColorStop(0.68, "#17659a");
+    gradient.addColorStop(0.79, "#8a8d63");
+    gradient.addColorStop(1, "#d59a2c");
+    context.clearRect(0, 0, width, height);
+    context.fillStyle = gradient;
+    context.fillRect(0, 0, width, height);
   }
 
   function paintWindBands(time) {
@@ -924,6 +937,7 @@
 
   function resize() {
     window.cancelAnimationFrame(animationFrame);
+    window.cancelAnimationFrame(buildFrame);
     width = window.innerWidth;
     height = window.innerHeight;
     pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
@@ -937,9 +951,14 @@
     baseCanvas.width = canvas.width;
     baseCanvas.height = canvas.height;
     baseContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
-    buildBasePainting();
-    buildWeatherParticles();
-    paint(performance.now());
+    paintInitialFrame();
+
+    // Present a usable background before building the detailed painting.
+    buildFrame = window.requestAnimationFrame(function () {
+      buildBasePainting();
+      buildWeatherParticles();
+      paint(performance.now());
+    });
   }
 
   function paint(time) {
