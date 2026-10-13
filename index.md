@@ -24,6 +24,7 @@ My long-term goal is to make the way **MLLMs** understand and represent **3D spa
 
 ## News
 
+- **[Sept. 2026]** Our paper *AssemState* is accepted to **NeurIPS 2026 · PhysWorld AI**. [Code](https://github.com/togekiss0603/AssemState) and [project page](https://togekiss0603.github.io/AssemState/) are released.
 - **[Aug. 2026]** Our paper *RouteGraph-Mona* is accepted by **PRICAI 2026**.
 
 <!-- ## News -->

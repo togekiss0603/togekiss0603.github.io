@@ -35,14 +35,11 @@ main:
     #notes: Oral Presentation
     image: ./assets/img/CM2025.png
 
-  - title: "FurniReason: Zero-Shot Vision-Language Reasoning for Manual-Guided Furniture Assembly, <em>under review</em>"
-    authors: <strong>Co-first Author</strong>, work done while interning at UIUC
-    conference_short: AAAI 2027
-    conference: AAAI Conference on Artificial Intelligence, 2027.
-    #pdf: https://arxiv.org/pdf/2510.13408
-    #page: https://arxiv.org/abs/2510.13408
-    #code: https://github.com/yaoyao-liu/class-incremental-learning/tree/main/mnemonics-training
-    #page: https://class-il.mpi-inf.mpg.de/mnemonics/
-    # bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
-    #notes: Oral Presentation
-    image: ./assets/img/AAAI2027.png
+  - title: "AssemState: Manual and Physical-State-Guided Reasoning for Zero-shot Furniture Assembly"
+    authors: <strong>Zhiyuan Qi*</strong>, Jierui Li*, Yifan Shen, Cheng Qian, Jiateng Liu (*Equal contribution)
+    conference_short: NeurIPS 2026
+    conference: NeurIPS 2026.
+    pdf: ./assets/files/AssemState_NeurIPS2026W.pdf
+    code: https://github.com/togekiss0603/AssemState
+    github_page: https://togekiss0603.github.io/AssemState/
+    image: ./assets/img/AssemState.png
