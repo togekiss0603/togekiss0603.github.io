@@ -4,7 +4,7 @@ main:
     authors: <strong>Zhiyuan Qi*</strong>, Jierui Li*, Yifan Shen, Cheng Qian, Jiateng Liu (*Equal contribution)
     conference_short: NeurIPS 2026
     conference: NeurIPS 2026.
-    pdf: ./assets/files/AssemState_NeurIPS2026W.pdf
+    pdf: ./assets/files/AssemState_cr.pdf
     code: https://github.com/togekiss0603/AssemState
     github_page: https://togekiss0603.github.io/AssemState/
     image: ./assets/img/AssemState.png
