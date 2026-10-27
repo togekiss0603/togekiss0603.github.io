@@ -59,5 +59,4 @@ My long-term goal is to make the way **MLLMs** understand and represent **3D spa
 - Tools: Unity 3D, Git, Conda, Cmake, Docker, Linux
 
 ## Selected Services
-Reviewer for **CVPR 2026, NeurIPS 2026, PRICAI 2026, IEEE VTC Spring, IEEE ICME, IEEE COMMAG**.
-
+Reviewer for **CVPR 2026, NeurIPS 2026, PRICAI 2026, ICASSP 2027, IEEE VTC Spring, IEEE ICME, IEEE COMMAG**.
