@@ -18,6 +18,8 @@ My long-term goal is to make the way **MLLMs** understand and represent **3D spa
 
 </div>
 
+<img src="./assets/img/ppl.png" alt="Research overview" style="width: 100%; height: auto; display: block; margin: 0 auto 28px;">
+
 ## Research Interests
 - **Multimodal Learning/MLLM:** Spatial Intelligence, Unified Multimodal Understanding and Generation Models, LLM/VLM Agent, Agentic AI
 - **3D Vision:** World Model, 3DGS, Controllable Video Generation
